@@ -1,16 +1,17 @@
-# React + Vite
+# CareerCompare
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + Vite front end, tested with Vitest and React Testing Library.
 
-Currently, two official plugins are available:
+## Scripts
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- `npm run dev` – start the dev server
+- `npm test` – run Vitest in watch mode (TDD loop)
+- `npm run test:run` – run the test suite once
+- `npm run lint` – oxlint
+- `npm run build` – production build
 
-## React Compiler
+## Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `src/theme/theme.js` – color tokens (mirrored as CSS variables in `src/index.css`)
+- `src/components/` – `NavBar`, `Hero`, `StepCard` (each with a `*.test.jsx`)
+- `src/pages/Dashboard.jsx` – dashboard page composing the components
