@@ -1,0 +1,13 @@
+{
+  "name": "careercompare-offers-api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@neon/functions": "^0.8.0",
+    "jose": "^6.0.0",
+    "pg": "^8.0.0"
+  }
+}
