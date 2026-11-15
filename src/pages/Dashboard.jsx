@@ -9,10 +9,10 @@ const STEPS = [
   { title: 'Set Priorities', description: 'Choose what matters most to you.' },
 ]
 
-export default function Dashboard({ onAddOffer }) {
+export default function Dashboard({ onAddOffer, onNavigate }) {
   return (
     <>
-      <NavBar activePage="Dashboard" />
+      <NavBar activePage="Dashboard" onNavigate={onNavigate} />
       <main className="dashboard">
         <Hero onAddOffer={onAddOffer} />
         <section className="dashboard__steps" aria-labelledby="steps-title">

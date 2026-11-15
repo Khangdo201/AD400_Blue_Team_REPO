@@ -6,7 +6,7 @@ const NAV_ITEMS = [
   { label: 'My Priorities', href: '#priorities' },
 ]
 
-export default function NavBar({ activePage = 'Dashboard' }) {
+export default function NavBar({ activePage = 'Dashboard', onNavigate }) {
   return (
     <header className="navbar">
       <a className="navbar__brand" href="#dashboard">
@@ -20,6 +20,14 @@ export default function NavBar({ activePage = 'Dashboard' }) {
                 className="navbar__link"
                 href={href}
                 aria-current={label === activePage ? 'page' : undefined}
+                onClick={
+                  onNavigate
+                    ? (event) => {
+                        event.preventDefault()
+                        onNavigate(href.slice(1))
+                      }
+                    : undefined
+                }
               >
                 {label}
               </a>
