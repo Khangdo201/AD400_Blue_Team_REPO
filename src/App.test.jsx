@@ -41,8 +41,11 @@ describe('App', () => {
     // instead of the dashboard — update saveOffer in App.jsx and assert
     // the offers list renders the newly saved offer.
     expect(
-      screen.getByRole('heading', { name: /everything you need to decide/i }),
-    ).toBeInTheDocument()
+      screen.getByRole('heading', {level: 1, name: /my job offers/i,
+  }),
+).toBeInTheDocument()
+    expect(screen.getByText('Tech Startup')).toBeInTheDocument()
+    expect(screen.getByText('Established Corporation')).toBeInTheDocument()
   })
 
   it('returns to the dashboard when the form is cancelled', async () => {

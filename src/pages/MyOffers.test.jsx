@@ -27,7 +27,7 @@ describe('MyOffers', () => {
     expect(
       items.map(
         (item) =>
-          within(item).getByRole('button').querySelector('.my-offers__company')
+          within(item).getByRole('button', { name: new RegExp(item.querySelector('.my-offers__company').textContent, 'i') }).querySelector('.my-offers__company')
             .textContent,
       ),
     ).toEqual(['Tech Startup', 'Established Corporation'])
